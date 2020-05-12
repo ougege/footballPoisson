@@ -34,4 +34,4 @@ class HandiCap {
   }
 }
 let handiCap = new HandiCap()
-export { handiCap }
+// export { handiCap }

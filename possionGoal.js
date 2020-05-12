@@ -44,4 +44,4 @@ class PossionGoal {
   }
 }
 let possionGoal = new PossionGoal()
-export { possionGoal }
+// export { possionGoal }

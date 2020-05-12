@@ -50,6 +50,18 @@ class PageUtil {
     let temp = homeGoal - awayGoal
     return temp > 0 ? 3 : (temp == 0 ? 1 : 0)
   }
+  // 比较俩个数组中公用的值
+  compareArr (a, b) {
+    let array = []
+    for (let i = 0; i < a.length; i++) {
+      for (let k = 0; k < b.length; k++) {
+        if (a[i] == b[k]) {
+          array.push(a[i])
+        }
+      }
+    }
+    return array
+  }
 }
 let pageUtil = new PageUtil()
-export { pageUtil }
+// export { pageUtil }
