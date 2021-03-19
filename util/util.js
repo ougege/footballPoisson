@@ -1,4 +1,4 @@
-class PageUtil {
+class Util {
   constructor () {
     this.init()
   }
@@ -15,26 +15,31 @@ class PageUtil {
     return result
   }
   // 返回数组的平均值: arr为传入的数组
-  arrayAv (arr) {
+  arrayMean (arr) {
     let length = arr.length
     let total = this.arraySum(arr)
-    return (total / length).toFixed(3)
+    return total / length
   }
   // 计算返还率 a:胜赔率, b:平赔率, c:负赔率
-  calPayOut (pWin, pDraw, pLose) {
-    return (1 / (1 / pWin + 1 / pDraw + 1 / pLose)).toFixed(4)
+  calPayOut (a, b, c) {
+    return 1 / (1 / a + 1 / b + 1 / c)
   }
   // 计算概率为赔率 pWin: 胜概率, pDraw: 平概率, pLose:输概率, payOut: 返还率
   calChance2Odds (pWin, pDraw, pLose, payOut) {
-    let win = (payOut / pWin).toFixed(2)
-    let draw = (payOut / pDraw).toFixed(2)
-    let lose = (payOut / pLose).toFixed(2)
-    return [win,draw,lose]
+    let oddsW = payOut / pWin
+    let oddsD = payOut / pDraw
+    let oddsL = payOut / pLose
+    let result = {oddsW, oddsD, oddsL}
+    return result
   }
   // 计算赔率为概率 oddsW: 胜赔率, oddsD: 平赔率, oddsL: 输赔率
   calOdds2Chance (oddsW, oddsD, oddsL) {
     let p = this.calPayOut(oddsW, oddsD, oddsL)
-    return [p / oddsW, p / oddsD, p / oddsL]
+    let pWin = p / oddsW
+    let pDraw = p / oddsD
+    let pLose = p / oddsL
+    let result = {pWin, pDraw, pLose}
+    return result
   }
   // 计算胜平负场次数量 getArr:得球数组, loseArr: 失球数组
   calAmount310 (getArr, loseArr) {
@@ -63,5 +68,4 @@ class PageUtil {
     return array
   }
 }
-let pageUtil = new PageUtil()
-// export { pageUtil }
+let Util = new Util()

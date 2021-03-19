@@ -28,8 +28,8 @@ class PossionGoal {
       }
     }
     // 返回概率
-    p310.push(pWin.toFixed(4), pDraw.toFixed(4), pLose.toFixed(4))
-    return p310
+    let result = {pWin, pDraw, pLose}
+    return result
   }
   // 生成所有比分的概率对象, a:主队进球率, b:客队进球率, i:比分层级
   allChance (a, b, i) {
@@ -44,4 +44,3 @@ class PossionGoal {
   }
 }
 let possionGoal = new PossionGoal()
-// export { possionGoal }

@@ -1,4 +1,4 @@
-class HandiCap {
+class AsiaHandicap {
   constructor () {
     this.init()
   }
@@ -10,28 +10,33 @@ class HandiCap {
     this.overArr = ['1.5', '1.5/2', '2', '2/2.5', '2.5', '2.5/3', '3', '3/3.5', '3.5', '3.5/4', '4', '4/4.5', '4.5', '4.5/5']
     this.overNumArr = [1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50, 3.75, 4.00, 4.25, 4.50, 4.75]
   }
-  // 将让球盘转化为数值:e表示让球盘
-  panKou2Num (e) {
+  /**
+   * 盘口转换为数值
+   * @param {e, type}
+   * e:让球盘或大小盘
+   * type: 类型, 1为让球盘;2为大小盘 
+   */
+  tranPanValue(e, type) {
+    // type 1 让球盘转换为数值
     let temp
-    for(let i = 0; i < this.panArr.length; i++) {
-      if (e == this.panArr[i]) {
-        temp = this.numArr[i]
-        break
+    if (type === 1) {
+      for(let i = 0; i < this.panArr.length; i++) {
+        if (e == this.panArr[i]) {
+          temp = this.numArr[i]
+          break
+        }
       }
     }
-    return temp
-  }
-  // 将大小盘转化为数组: e表示大小盘
-  overUnder2Num (e) {
-    let temp
-    for (let i = 0; i < this.overArr.length; i++) {
-      if (e == this.overArr[i]) {
-        temp = this.overNumArr[i]
-        break
+    // type 2 大小盘转换为数值
+    if (type === 2) {
+      for (let i = 0; i < this.overArr.length; i++) {
+        if (e == this.overArr[i]) {
+          temp = this.overNumArr[i]
+          break
+        }
       }
     }
     return temp
   }
 }
-let handiCap = new HandiCap()
-// export { handiCap }
+let AsiaHandicap = new AsiaHandicap()
