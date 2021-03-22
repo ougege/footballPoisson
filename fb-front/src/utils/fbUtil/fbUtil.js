@@ -1,4 +1,4 @@
-class Util {
+class FbUtil {
   constructor () {
     this.init()
   }
@@ -68,4 +68,4 @@ class Util {
     return array
   }
 }
-let Util = new Util()
+let fbUtil = new FbUtil()
