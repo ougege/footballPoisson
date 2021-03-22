@@ -2,7 +2,7 @@
  * 统一管理storage
  * yanglu
  */
-const xtyStorage = {
+module.exports = { 
 	// 列表
 	loginUserInfo: 'loginUserInfo', // 授权用户信息
 	loginTokenInfo: 'loginTokenInfo', // 用户登录信息
@@ -31,4 +31,3 @@ const xtyStorage = {
 		// uni.clearStorageSync()
 	}
 }
-export {xtyStorage}

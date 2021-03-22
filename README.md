@@ -4,7 +4,7 @@
 #### 对象方法说明
 
 对象|方法|描述|参数|参数说明|类型|是否必须|可选值|返回值|
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+--|--|--|--|--|--|--|--|--|--|
 AsiaHandicap|tranPanValue|让球盘或大小盘转换为数值|e，type|盘口, 类型|string, number|y||number|
 Util|arraySum|数组求和|arr|数组|array|y||number|
 Util|arrayMean|数组求平均|arr|数组|array|y||number|

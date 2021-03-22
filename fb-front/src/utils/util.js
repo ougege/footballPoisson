@@ -1,5 +1,6 @@
-import { type } from './common/type.js'
-import { xtyStorage } from './common/xtyStorage.js'
+// import { type } from './common/type.js'
+const { type } = require('./common/type')
+const xtyStorage = require('./common/xtyStorage')
 
 // 小于10加0处理
 function addZero (e) {
@@ -154,7 +155,7 @@ function getCurrentToken () {
   return loginTokenInfo
 }
 
-module.exports = {
+module.exports = { 
   formatDate,
   formatDateTime,
   addZero,

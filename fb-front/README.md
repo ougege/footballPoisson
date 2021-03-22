@@ -1,24 +1,6 @@
 # fb-front
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 分析
+1. 计算出比赛日期
+1. 利用比赛日期获取比赛日的比赛链接
+1. 通过比赛链接获取比赛基本信息

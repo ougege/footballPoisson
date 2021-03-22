@@ -22,5 +22,6 @@ class Type {
 }
 
 let type = new Type()
+module.exports = { type }
 // 使用 type["isNull"](null)等
-export { type }
+// export { type }

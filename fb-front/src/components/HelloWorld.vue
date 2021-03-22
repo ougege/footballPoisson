@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { matchDate } from '../utils/fbUtil/matchDate'
+// import { matchDate } from '../utils/fbUtil/matchDate'
+const matchDate = require('../fbUtil/matchDate')
 export default {
   name: 'HelloWorld',
   props: {
