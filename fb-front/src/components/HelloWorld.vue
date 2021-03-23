@@ -5,8 +5,7 @@
 </template>
 
 <script>
-// import { matchDate } from '../utils/fbUtil/matchDate'
-const matchDate = require('../fbUtil/matchDate')
+import { api, config } from '../utils/index'
 export default {
   name: 'HelloWorld',
   props: {
@@ -16,7 +15,20 @@ export default {
     return {}
   },
   mounted () {
-    console.log(matchDate)
+    console.log(config)
+    const params = {
+      game: 0,
+      date: '2021-03-19',
+      pageNo: 1,
+      simple: 0,
+      pageSize: 1,
+      apiName: 'getMatchListByDate'
+    }
+    api.getMatchListByDate(params).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
   methods: {
   }
