@@ -28,7 +28,8 @@ class MatchDate {
       const currentTimeStamp = start + k * this.daySeconds
       const fullDate = util.formatDate(new Date(currentTimeStamp), 'yyyy-MM-dd')
       const currentYear = util.formatDate(new Date(currentTimeStamp), 'yyyy')
-      this.dateObj[currentYear].push(fullDate)
+      const dateHasId = { id: k, date: fullDate }
+      this.dateObj[currentYear].push(dateHasId)
     }
   }
 }
