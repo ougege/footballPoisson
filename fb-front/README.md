@@ -11,3 +11,4 @@
 1. [knex document](http://knexjs.org/#Installation-node 'knex document1. [knex模块]()')
 1. [knex模块基本使用](https://www.bloglab.cn/1136.html 'knex模块基本使用')
 1. [knex.js笔记](https://blog.csdn.net/liuyueyi1995/article/details/53782047 'knex.js笔记')
+1. [navicat 连接mysql](https://blog.csdn.net/cxh6863/article/details/80904284 'navicat 连接mysql')
