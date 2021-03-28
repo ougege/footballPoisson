@@ -1,3 +1,4 @@
+// 将特定日期之间的日期生成按年份分类的json
 const fs = require('fs')
 const { dateObj } = require('../fbUtil/matchDate')
 for (let key in dateObj) {

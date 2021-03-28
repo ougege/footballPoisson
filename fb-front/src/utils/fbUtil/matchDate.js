@@ -10,7 +10,7 @@ class MatchDate {
     this.cutDateBetween()
   }
   // 计算时间段的日期
-  cutDateBetween (dateA = '2018-01-01', dateB = new Date()) {
+  cutDateBetween (dateA = '2013-01-01', dateB = new Date()) {
     const start = util.newTimeStamp(dateA)
     const end = util.newTimeStamp(dateB)
     const totalDay = Math.floor((end - start) / this.daySeconds)

@@ -69,3 +69,4 @@ class FbUtil {
   }
 }
 let fbUtil = new FbUtil()
+module.exports = fbUtil
