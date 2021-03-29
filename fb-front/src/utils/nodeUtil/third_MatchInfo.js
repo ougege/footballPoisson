@@ -2,6 +2,7 @@ const fs = require('fs')
 const { api } = require('../index')
 const fbUtil = require('../fbUtil/fbUtil')
 const { promisePro } = require('../common/promisePro')
+const { asyncPool } = require('../common/asyncPool')
 const dataDir = fs.readdirSync('../../resource/data/')
 
 // 将字符串赔率转换为概率的方法
@@ -15,8 +16,9 @@ function dealStringOddsToChance (strOdds) {
     return fbUtil.calOdds2Chance(...newArr)
 }
 
-const fn = (jsonName, cb, failCb) => {
-    const data = fs.readFileSync(jsonName)
+function dealEveryDayJson (jsonName) {
+    const name = '../../resource/data/' + jsonName
+    const data = fs.readFileSync(name)
     const jsonData1 = JSON.parse(data)
     const dealMatchArr = []
     const fn1 = (paramObj, cb1, failCb1) => {
@@ -61,46 +63,20 @@ const fn = (jsonName, cb, failCb) => {
     }
     const fnArr1 = [fn1]
     const callback1 = (res) => {
-        let name = '../../resource/data/' + jsonName + '.json'
+        let name = '../../resource/data/' + jsonName
         let tempJson = JSON.stringify(dealMatchArr)
-        console.log(`${jsonName}完成`)
         fs.writeFile(name, tempJson, (err) => {
             if (err) {
-                failCb()
                 throw err
             }
-            cb()
+            console.log(`${jsonName}完成`)
         })
     }
     promisePro.all(jsonData1, fnArr1, callback1, 200)
 }
-const fnArr = [fn]
-const callback = (res) => {
-    console.log('全部完成')
-}
-promisePro.all(dataDir, fnArr, callback, 200)
 
+dealEveryDayJson('2013-03-29.json')
 
-// 每次请求都是一个promise，保证一定时间间隔，防止频繁请求封ip
-// const output = (i, matchObj) => new Promise((resolve) => {
-//     setTimeout(() => {
-//         getMatchData(matchObj, function() {
-//             console.log(new Date, i)
-//             resolve()
-//         })
-//     }, 20 * i)
-// })
-// // 遍历所有日期
-// for (var i = 0; i < jsonData.length; i++) {
-//     tasks.push(output(i, jsonData[i]))
-// }
-
-// Promise.all(tasks).then(() => {
-//     let name = '../../resource/data/' + '2013-01-01-new' + '.json'
-//     let tempJson = JSON.stringify(dealMatchArr)
-//     fs.writeFile(name, tempJson, (err) => {
-//         if (err) {
-//             throw err
-//         }
-//     })
+// asyncPool(1, dataDir, dealEveryDayJson).then(() => {
+//     console.log('全部执行完成')
 // })
