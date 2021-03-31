@@ -75,7 +75,7 @@ for (let k = 0; k < dataDir.length; k++) {
   }
   tasks.push(dealEveryDayJson)
 }
-async.parallelLimit(tasks, 3, function(err) {
+async.parallelLimit(tasks, 2, function(err) {
   if (err) console.log(err)
   console.log('所有都完成')
 })
