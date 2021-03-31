@@ -85,7 +85,7 @@ for (let k = 0; k < jsonData.length; k++) {
     }
     tasks.push(itreator)
 }
-async.parallel(tasks, function (err) {
+async.series(tasks, function (err) {
     if (err) console.log(err)
     console.log('所有都完成')
 })
