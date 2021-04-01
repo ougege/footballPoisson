@@ -45,5 +45,5 @@ const bookieArr = [
     }
 ]
 module.exports = {
-    ...bookieArr
+    bookieArr
 }

@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { api } = require('../index')
-const bookieArr = require('../common/bookieName')
+const {　bookieArr　} = require('../common/bookieName')
 const dataDir = fs.readdirSync('../../resource/data/')
 const async = require('async')
 
@@ -23,21 +23,21 @@ for (let k = 0; k < dataDir.length; k++) {
           apiName: 'getFtAicaiAllEuropeOdds'
         }
         api.getFtAicaiAllEuropeOdds(params, function(res) {
-          if (res.list) {
-            for (let m = 0; m < bookieArr.length; m++) {
-                for (let n = 0; n < res.list.length; n++) {
-                    if (bookieArr[m].name === res.list[n].providerName) {
-                        paramObj[bookieArr[m].label] = res.list[n].oddsId
-                        break
+            if (res.list) {
+                for (let m = 0; m < bookieArr.length; m++) {
+                    for (let n = 0; n < res.list.length; n++) {
+                        if (bookieArr[m].name === res.list[n].providerName) {
+                            paramObj[bookieArr[m].label] = res.list[n].oddsId
+                            break
+                        }
                     }
                 }
+                dealMatchArr.push(paramObj)
+                next()
+            } else {
+                dealMatchArr.push(paramObj)
+                next()
             }
-            dealMatchArr.push(paramObj)
-            next()
-          } else {
-            dealMatchArr.push(paramObj)
-            next()
-          }
         }, function(err) {
           console.log(err)
         })
