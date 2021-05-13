@@ -21,3 +21,4 @@ async parallelLimit设置并行任务2时不容易当机
 1. [knex模块基本使用](https://www.bloglab.cn/1136.html 'knex模块基本使用')
 1. [knex.js笔记](https://blog.csdn.net/liuyueyi1995/article/details/53782047 'knex.js笔记')
 1. [navicat 连接mysql](https://blog.csdn.net/cxh6863/article/details/80904284 'navicat 连接mysql')
+1. [nodejs中执行shell](http://nodejs.cn/api/child_process.html#child_process_child_process_execfile_file_args_options_callback 'nodejs中执行shell')

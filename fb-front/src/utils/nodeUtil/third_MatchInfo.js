@@ -2,13 +2,9 @@ const fs = require('fs')
 const path = require('path')
 const { api } = require('../index')
 const fbUtil = require('../fbUtil/fbUtil')
-const { promisePro } = require('../common/promisePro')
 const dataDir = fs.readdirSync('../../resource/data/')
 const async = require('async')
 
-
-// const data = fs.readFileSync('../../resource/data/2013-01-02.json')
-//     const jsonData1 = JSON.parse(data)
 var tasks = []
 for (let k = 0; k < dataDir.length; k++) {
   const dealEveryDayJson = (finish) => {
@@ -75,7 +71,14 @@ for (let k = 0; k < dataDir.length; k++) {
   }
   tasks.push(dealEveryDayJson)
 }
-async.parallelLimit(tasks, 2, function(err) {
+// 并行限制
+// async.parallelLimit(tasks, 2, function(err) {
+//   if (err) console.log(err)
+//   console.log('所有都完成')
+// })
+
+// 并行
+async.parallel(tasks, function(err) {
   if (err) console.log(err)
   console.log('所有都完成')
 })

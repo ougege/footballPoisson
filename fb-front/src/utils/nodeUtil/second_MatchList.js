@@ -3,7 +3,7 @@ const fs = require('fs')
 const async = require('async')
 const { type } = require('../common/type')
 const { api } = require('../index')
-const data = fs.readFileSync('../../resource/date/2017.json')
+const data = fs.readFileSync('../../resource/date/2021.json')
 const jsonData = JSON.parse(data)
 const tasks = []
 for (let k = 0; k < jsonData.length; k++) {
@@ -85,7 +85,7 @@ for (let k = 0; k < jsonData.length; k++) {
     }
     tasks.push(itreator)
 }
-async.parallelLimit(tasks, 10, function (err) {
+async.parallelLimit(tasks, 70, function (err) {
     if (err) console.log(err)
     console.log('所有都完成')
 })
