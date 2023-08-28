@@ -1,0 +1,7 @@
+由意大利国有彩票公司lottomatica收购，自有品牌better.it，与中国华彩控股有限公司有合作，
+涉及福彩体彩等；收购伦敦的博彩服务提供商Finsoft；给尼日利亚在线彩票PLC提供服务；
+对土耳其iddaa控股达到47%；100%收购totosi；与sazka签订合同直至2022年；
+与斯洛伐克tipos合作；paddypower成为IGT旗下openbet的第一个用户；
+和veikkaus签订5年合同；与冰岛大学彩票开展6年合同；与betsson展开多元化合作
+；与betfred在澳大利亚有体育合作；授权比利时10年彩票；提供opap34%的；
+在北欧都是合作伙伴，sweden,norsktipping;合作与南非彩票公司；
