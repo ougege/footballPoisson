@@ -7,8 +7,8 @@ const knex = require('knex')({
     client: 'mysql',
     connection: {
         host : '192.168.199.128',
-        user : 'ougege',
-        password : 'ougege',
+        user : 'MuYi086',
+        password : 'MuYi086',
         database : 'knex'
     }
 })
